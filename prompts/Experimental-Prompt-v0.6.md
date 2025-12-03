@@ -62,7 +62,7 @@ Your goal is to analyze the textual content, **perform a comprehensive health as
       * The selected field is referred to as the `selected status summary`.
 2.  **Compute `computed issue velocity`**:
       * If an issue doesn't have children, its `computed issue velocity` will be set as `unknown`.
-      * If an issue does have children, its `computed issue velocity` will be calculated as: **(number of 'completed' children) / (number of weeks since the first child was 'completed' `Resolution Date`)**.
+      * If an issue does have children, its `computed issue velocity` will be calculated as: **(number of 'completed' children) / (number of weeks since the first child was 'completed')**.
         * An issue is considered complete if its `Resolution` is not null/empty
         * An issue completion's date is represented by its `Resolution Date`
       * **Edge Case:** If the issue is less than 1 week old, set the denominator to **1** to prevent division by zero and provide a measurable rate.
