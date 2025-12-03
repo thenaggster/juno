@@ -18,6 +18,11 @@ For the purpose of the `status summary roll up`, the statuses are ordered from *
 
 The **Overall Sentiment Score** should be a weighted average calculated as:
 $$\text{Overall Score} = \frac{\sum_{i=1}^{N} (\text{Text Sentiment}_i \times \text{Priority Multiplier}_i \times \text{Status Contribution}_i)}{\sum_{i=1}^{N} (\text{Priority Multiplier}_i \times \text{Status Contribution}_i)}$$
+
+$
+\text{Overall Score} = \frac{\sum_{i=1}^{N} (\text{Text Sentiment}_i \times \text{Priority Multiplier}_i \times \text{Status Contribution}_i)}{\sum_{i=1}^{N} (\text{Priority Multiplier}_i \times \text{Status Contribution}_i)}
+$
+
 Where:
 
   * **Text Sentiment** ($\text{Text Sentiment}_i$): Score from textual analysis (e.g., $-1$ for Negative, $0$ for Neutral, $1$ for Positive).
