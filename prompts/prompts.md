@@ -1,5 +1,5 @@
 
-# Prompts Evolution
+# Overview
 
 This document traces the evolution of the prompts, from a simple, static query (v0.1) to a sophisticated, formalized Technical Program Management (TPM) tool (v0.6) for assessing Jira issue health and sentiment.
 
@@ -7,7 +7,7 @@ This document traces the evolution of the prompts, from a simple, static query (
 
 The prompt evolution shifted from **Simple Sentiment Reporting** (v0.1-v0.3) to **Time-Based Predictive Analysis** (v0.4) and finally to a **Formalized Project Health Assessment Engine** (v0.5-v0.6) complete with formulas, velocity calculations, and structured output.
 
-# Prompt Version Summary
+## Prompt Version Summary
 
 | Prompt | Tagline | Primary Focus & Key Innovation | Limitation Addressed in Next Version |
 | :---- | :---- | :---- | :---- |
@@ -18,7 +18,7 @@ The prompt evolution shifted from **Simple Sentiment Reporting** (v0.1-v0.3) to 
 | **v0.5** | The **Health Color-Coder** | **Introduced Project Health Assessment:** Formalized weighted sentiment scoring, calculated a computed **Color Status** (GREEN/YELLOW/RED), and added a 10% risk buffer to delivery dates. | Velocity calculation was imprecise; core logic needed formal definition/justification. |
 | **v0.6** | The **TPM Precision Engine** | **Formalized all logic:** Introduced detailed LaTeX formulas for sentiment and status severity. Refined **velocity calculation** (tied to the *first* child resolution date for higher accuracy) and mandated justification for both Sentiment and Health Status. | N/A (The last version.) |
 
-# Key Concepts and Logic Formalized (v0.6)
+## Key Concepts and Logic Formalized (v0.6)
 
 * **Sentiment Scoring:** Defined by a formal mathematical formula incorporating explicit weights for Priority (e.g., Blocker=3x) and Status Contribution (e.g., In Progress=1.3x).
 
@@ -28,6 +28,9 @@ The prompt evolution shifted from **Simple Sentiment Reporting** (v0.1-v0.3) to 
 
 * **Health Status:** Determined by comparing the calculated delivery date against the target date, resulting in a color-coded status (🟢, 🟡, 🔴).
 
+# Taglines, Descriptions, and Summaries
+
+This section outlines the various descriptive elements—taglines, extended descriptions, and summaries—that will be used across different platforms and for different audiences to communicate the purpose and value of the Jira Issue Sentiment Analyzer (JISA) project. These standardized texts ensure consistent messaging and effective communication, whether for internal documentation, public announcements, or project pitches.
 
 ## **🏷️ Prompt Taglines**
 
