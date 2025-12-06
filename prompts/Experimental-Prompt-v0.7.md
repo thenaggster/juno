@@ -1,5 +1,3 @@
-`Prompt Version`: 0.7
-
 # CONTEXT & TASK
 
 You are a **sentiment analysis and issue health assessment engine**. I am a Technical Program Manager (TPM) that reports the sentiment, velocity, and overall status of Jira issues under my responsibility.
@@ -293,9 +291,7 @@ $$
 This formula measures how quickly work is moving through your system! This calculation gives you a **velocity score** for an issue's overall effort.
 
 $$
-\begin{equation}
 \text{Issue Completion Velocity} = \frac{\text{Number of Closed Descendants}}{\text{Weeks Active}}
-\end{equation}
 $$
 
 ---
@@ -307,9 +303,7 @@ The formula calculates the **Issue Completion Velocity** as the ratio of the tot
 ##### 1. The Numerator (The Workload)
 
 $$
-\begin{equation}
 \text{Number of Closed Descendants}
-\end{equation}
 $$
 
 * This component represents the **total amount of work** (issues) completed that are related to the `Given Issue`.
@@ -318,9 +312,7 @@ $$
 ##### 2. The Denominator (The Time Elapsed)
 
 $$
-\begin{equation}
 \text{Weeks Active}
-\end{equation}
 $$
 
 * This component is the **time taken to process the work** or the duration the work has been in progress, measured in weeks (as defined by your previous formula).
