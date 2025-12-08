@@ -82,7 +82,7 @@ J.U.N.O. is currently designed to be executed via a prompt in Cursor, allowing f
 #### Steps
 1. Start a Cursor Agent session chat
 1. Set the model to **Gemini 2.5**.
-1. Copy and paste the prompt (i.e. [v0.7][https://raw.githubusercontent.com/thenaggster/juno/refs/heads/main/prompts/Experimental-Prompt-v0.7.md]) into the Cursor agent session.
+1. Copy and paste the prompt (i.e. [v0.7](https://raw.githubusercontent.com/thenaggster/juno/refs/heads/main/prompts/Experimental-Prompt-v0.7.md) ) into the Cursor agent session.
 1. Once the results are ready, copy and paste as markdown to your doc (tested with Google Docs)
 -----
 
