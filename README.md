@@ -1,103 +1,103 @@
-# 🔊 J.E.C.H.O.
+This is a brilliant choice. **"Understanding Nuance & Objectives"** perfectly encapsulates the dual nature of a TPM's job: managing the *people/feelings* (Nuance) and the *business goals* (Objectives).
 
-### **J**ira **E**valuation of **C**omments & **H**ealth **O**utcomes
+It positions the tool not as a "compliance bot," but as a sophisticated "Signal Processor" that connects human signals to business outcomes.
 
-> **"The status is Green, but what is the team actually saying?"**
-
-**J.E.C.H.O.** is an advanced analytic engine for Technical Program Managers. Unlike standard reports that rely on manual status updates, J.E.C.H.O. "listens" to the textual data (comments, descriptions, summaries) of a Jira hierarchy. It triangulates **Sentiment**, **Velocity**, and **Delivery Math** to produce a true-to-life health assessment.
+Here is the **README.md** for your repo, fully branded with the **J.U.N.O.** identity.
 
 -----
 
-## 📡 What does it do?
+# 🛰️ J.U.N.O.
 
-J.E.C.H.O. performs a deep-dive sonar scan on a specific Jira Issue (Outcome, Feature, or Epic) and its children. It answers three critical questions:
+### **J**ira **U**nderstanding of **N**uance & **O**bjectives
 
-1.  **The Vibe (Sentiment):** Is the team frustrated, blocked, or confident?
-2.  **The Speed (Velocity):** Based on actual closure rates, how fast are we moving?
-3.  **The Reality (Forecast):** Based on Vibe + Speed, when will we *actually* finish?
+> **"Objectives are binary. Nuance is human. J.U.N.O. bridges the gap."**
+
+**J.U.N.O.** is an AI-powered observation engine for Technical Program Managers. Just as the NASA Juno probe peers through Jupiter's turbulent clouds to see the planet's true structure, this tool peers through the "clouds" of Jira comments to reveal the true health of your program.
+
+It combines **Generative AI Inference** (to detect Nuance) with **Strict Velocity Math** (to track Objectives) to answer the ultimate question: *Are we going to hit the date?*
 
 -----
 
-## 🧮 The J.E.C.H.O. Algorithm
+## 🔭 The J.U.N.O. Methodology
 
-The engine uses a weighted formula to calculate the "Overall Health Score," giving more weight to high-priority items and active development phases.
+J.U.N.O. orbits your Jira hierarchy and performs a two-layer scan:
 
-### 1\. Sentiment Scoring
+### 1\. The Nuance Layer (Sentiment Inference)
 
-J.E.C.H.O. reads the room using a weighted average:
+Standard reports ignore text. J.U.N.O. reads it.
+
+  * **The Problem:** A ticket can be marked `Green` while the comments are full of "blockers," "latency," and "risk."
+  * **The Solution:** J.U.N.O. ingests Descriptions and Comment Histories, calculating a weighted "Vibe Score" ($-1$ to $+1$). It gives higher weight to:
+      * **Priority:** Critical/Blocker issues ($3\times$ Multiplier).
+      * **Recency:** The latest comments matter most.
+
+### 2\. The Objectives Layer (Delivery Math)
+
+Standard reports rely on hopeful target dates. J.U.N.O. relies on physics.
+
+  * **The Problem:** Manual "Target End Dates" are often optimistic guesses.
+  * **The Solution:** J.U.N.O. ignores the guess. It calculates the *actual* delivery date based on historical velocity:
+      * If you have 20 children and close 2 per week, you *will* finish in 10 weeks, regardless of what the target date says.
+
+-----
+
+## 🧮 The Logic Core
+
+J.U.N.O. operates on transparent, TPM-verified formulas:
+
+### Sentiment (The Nuance Score)
 
 $$\text{Overall Score} = \frac{\sum (\text{Text Sentiment} \times \text{Priority Multiplier} \times \text{Status Contribution})}{\sum (\text{Priority Multiplier} \times \text{Status Contribution})}$$
 
-  * **Priority Multipliers:** Critical/Blocker (3x) $\rightarrow$ Minor (0.75x)
-  * **Status Weights:** In Progress/Testing (1.3x) $\rightarrow$ Backlog (1.1x) $\rightarrow$ Done (1.0x)
+### Delivery Prediction (The Objective Reality)
 
-### 2\. Velocity Calculation
+$$\text{Est. Date} = \left( \frac{\text{Open Children}}{\text{Verified Velocity}} \right) + \text{Today} + 10\% \text{ Buffer}$$
 
-It ignores hopeful estimates and calculates raw speed:
-$$\text{Velocity} = \frac{\text{Completed Children}}{\text{Weeks Active}}$$
+### Health Status Triangulation
 
-### 3\. Delivery Forecast
+The final R/Y/G status is a composite of Nuance and Objectives:
 
-It projects the finish line based on current velocity, adding a risk buffer:
-$$\text{Est. Date} = \left( \frac{\text{Open Children}}{\text{Velocity}} \right) + \text{Today} + 10\% \text{ Buffer}$$
-
------
-
-## 🚦 The "Echo" Status
-
-The final output categorizes the issue into three signal types:
-
-| Signal | Status | Criteria |
-| :--- | :--- | :--- |
-| 🟢 | **Clear** | Positive Sentiment AND Delivery Date $\le$ Target Date (+1 week) |
-| 🟡 | **Distorted** | Neutral Sentiment OR Delivery Date is 1-3 weeks late |
-| 🔴 | **Noisy** | Negative Sentiment OR Delivery Date is \>3 weeks late |
+  * 🟢 **Green:** Positive Sentiment + `Computed Date` $\le$ `Target Date`.
+  * 🟡 **Yellow:** Neutral Sentiment OR `Computed Date` slips 1-3 weeks.
+  * 🔴 **Red:** Negative Sentiment OR `Computed Date` slips \>3 weeks.
 
 -----
 
-## 🛠️ Setup & Configuration
+## 🛠️ Installation & Setup
 
 ### Prerequisites
 
   * Python 3.9+
-  * Jira API Access
+  * Jira API Token
+  * LLM Provider (OpenAI/Azure) for the inference layer.
 
 ### Environment Variables
 
-Create a `.env` file in your root directory:
+Configure your `.env` file to establish the uplink:
 
 ```bash
 JIRA_BASE_URL="https://issues.redhat.com"
-JIRA_USER_EMAIL="your_email@redhat.com"
-JIRA_API_TOKEN="your_api_token"
+JIRA_API_TOKEN="your_token"
+LLM_API_KEY="your_key"
 ```
 
-### Usage
+### Mission Control (Usage)
 
-Pass the top-level issue key you want to analyze. J.E.C.H.O. will fetch the entire hierarchy.
+Launch the probe against a specific Initiative or Epic:
 
 ```bash
-# Analyze a single Epic or Initiative
-python jecho_engine.py --issue PROJECT-1234
-
-# Output:
-# > 📡 Pinging hierarchy for PROJECT-1234...
-# > 👂 Listening to 15 child issues...
-# > 📊 Computing velocity...
-# > 📝 Generating Markdown Report...
+python juno_probe.py --issue PROJECT-8842
 ```
 
 -----
 
-## 📄 Output Format
+## 📄 The Mission Report
 
-J.E.C.H.O. generates a rich Markdown report optimized for Google Docs import.
+J.U.N.O. returns a structured **Markdown Assessment** containing:
 
-  * **Executive Summary:** A high-level narrative of the risk.
-  * **TL;DR:** The 2-sentence reality check.
-  * **Cross-Cutting Observations:** "Meta" analysis of the comments (e.g., "The team mentions 'latency' in 4 different tickets").
-  * **Child-Level Breakdown:** Per-ticket sentiment analysis.
+1.  **Executive Summary:** A narrative synthesis of the risk.
+2.  **Nuance Analysis:** "Why is the sentiment negative?" (e.g., *frequency of the word 'refactor' in comments*).
+3.  **Objective Reality:** A side-by-side comparison of `Target Date` vs. `Computed Date`.
+4.  **Anomaly Detection:** Specific child tickets that are dragging down the average velocity.
 
 -----
-
-*Maintained by the TPM Team. Amplifying the signal, reducing the noise.* 🔊
