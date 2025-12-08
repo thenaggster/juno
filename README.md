@@ -75,12 +75,15 @@ LLM_API_KEY="your_key"
 
 ### Mission Control (Usage)
 
-Launch the probe against a specific Initiative or Epic:
+Launch the probe against a specific Outcome, Feature, Initiative or Epic.
 
-```bash
-python juno_probe.py --issue PROJECT-8842
-```
+J.U.N.O. is currently designed to be executed via a prompt in Cursor, allowing for rapid, lightweight scanning of specific portfolio issues.
 
+#### Steps
+1. Start a Cursor Agent session chat
+1. Set the model to **Gemini 2.5**.
+1. Copy and paste the prompt (i.e. v0.7(https://raw.githubusercontent.com/thenaggster/juno/refs/heads/main/prompts/Experimental-Prompt-v0.7.md)) into the Cursor agent session.
+1. Once the results are ready, copy and paste as markdown to your doc (tested with Google Docs)
 -----
 
 ## 📄 The Mission Report
