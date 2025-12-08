@@ -121,7 +121,7 @@ After you complete your analysis, ask the user if he wants to save the output to
 
 Use the following parameters:
 * **email:** *Ask user. Provide 'rgarcia@redhat.com' as default.*
-* **title:** *Ask user. Provide 'Status Analysis for [ISSUE-KEY]' as default.*
+* **title:** *Ask user. Provide 'Status Analysis for [ISSUE-KEY] (prompt: `Prompt Version`)' as default.*
 * **content:** *The analysis you just completed*
 
 
