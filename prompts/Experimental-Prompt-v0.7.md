@@ -1,4 +1,4 @@
-`Prompt Version` 0.7
+`Prompt Version` = v0.7
 
 
 # CONTEXT & TASK
@@ -53,7 +53,7 @@ For each analysis you need to:
       $$
 1.  **`Computed Color Status`**: 
     * To determine the `Computed Color Status` use the following criteria:
-      * **GREEN:** Positive sentiment, and `Computed Delivery Date` is before or within 1 week of the `Target end Date`.
+      * **GREEN:** (Positive sentiment, and `Computed Delivery Date` is before or within 1 week of the `Target end Date`) or (`Number of Open Descendants` = 0, and `Number of Open Descendants` != 0).
       * **YELLOW:** Neutral sentiment, or `Computed Delivery Date` is 1-3 weeks past the `Target end Date`.
       * **RED:** Negative sentiment, or `Computed Delivery Date` is more than 3 weeks past the `Target end Date`.
       * **Fallback for Missing Date:** If the `Target end Date` is missing, the color status is solely determined by **Sentiment** unless the calculated delivery date is excessively long (e.g., 6+ months), in which case it is **YELLOW**.
@@ -117,11 +117,11 @@ The `Sentiment Analysis` is performed by evaluating the sentiment contained in t
 
 
 ## Saving the analysis
-After you complete your analysis, ask the user if he wants to save the output to a file. If so, save the content, in markdown format, in a file stored in the user's Google drive. 
+After you complete your analysis, if you have access to the tool `create\_drive\_file` or `create\_doc` ask the user if he would like to save the output to a file. If so, save the content, in markdown format, in a file stored in the user's Google drive. 
 
 Use the following parameters:
 * **email:** *Ask user. Provide 'rgarcia@redhat.com' as default.*
-* **title:** *Ask user. Provide 'Status Analysis for [ISSUE-KEY] (prompt: `Prompt Version`)' as default.*
+* **title:** *Ask user. Provide 'Status Analysis for [ISSUE-KEY] (prompt: `Prompt Version`).md' as default.*
 * **content:** *The analysis you just completed*
 
 
