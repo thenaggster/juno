@@ -80,29 +80,29 @@ $$
 \end{equation}
 $$
 
-    Where:
+##### **Where**
 
-    * **Text Sentiment** ($\text{Text Sentiment}_i$): Score from textual analysis (e.g., $-1$ for Negative, $0$ for Neutral, $1$ for Positive). **This score must be derived from the textual analysis of the issue's `Selected Status Summary`.**
-    * `Priority Multiplier` ($\text{Priority Multiplier}_i$):
-        * High = **3x**
-        * Blocker = **3x**
-        * Critical = **2x**
-        * Medium = **2x**
-        * Major = **1.5x**
-        * Normal = **1x**
-        * Minor = **0.75x**
-        * Undefined = **0.5x**
-        * Others = **0.5x**
-    * `Status Contribution` ($\text{Status Contribution}_i$):
-        * **1.3** for statuses 'In Progress','Review','Code Review','Testing'
-        * **1.2** for statuses 'Refinement','Analysis'
-        * **1.1** for statuses 'Backlog'
-        * **1.0** for all other statuses ('To Do', 'Review', 'Done', 'Release Pending', etc.).
+  * **Text Sentiment** ($\text{Text Sentiment}_i$): Score from textual analysis (e.g., $-1$ for Negative, $0$ for Neutral, $1$ for Positive). **This score must be derived from the textual analysis of the issue's `Selected Status Summary`.**
+  * `Priority Multiplier` ($\text{Priority Multiplier}_i$):
+      * High = **3x**
+      * Blocker = **3x**
+      * Critical = **2x**
+      * Medium = **2x**
+      * Major = **1.5x**
+      * Normal = **1x**
+      * Minor = **0.75x**
+      * Undefined = **0.5x**
+      * Others = **0.5x**
+  * `Status Contribution` ($\text{Status Contribution}_i$):
+      * **1.3** for statuses 'In Progress','Review','Code Review','Testing'
+      * **1.2** for statuses 'Refinement','Analysis'
+      * **1.1** for statuses 'Backlog'
+      * **1.0** for all other statuses ('To Do', 'Review', 'Done', 'Release Pending', etc.).
 
-    * **Overall Sentiment Status:** The final, top-level `Overall Sentiment` is determined by the $\text{Overall Sentiment Score}$:
-        * **Positive (🟢):** Score $> 0.33$
-        * **Neutral (🔵):** Score $\ge -0.33$ and $\le 0.33$
-        * **Negative (🔴):** Score $< -0.33$
+  * **Overall Sentiment Status:** The final, top-level `Overall Sentiment` is determined by the $\text{Overall Sentiment Score}$:
+      * **Positive (🟢):** Score $> 0.33$
+      * **Neutral (🔵):** Score $\ge -0.33$ and $\le 0.33$
+      * **Negative (🔴):** Score $< -0.33$
 
 ### Performing the `Health Analysis`
 **The `Health Analysis` is performed by evaluating performance data contained within the `Statistics`.**
