@@ -23,7 +23,7 @@ The Overall Analysis includes:
 For each analysis you need to:
 1. Obtain the data needed to perform it
 1. Perform the prescribed calculations for it
-1. analyze and summarize the results
+1. Analyze and summarize the results
 
 #### Obtaining the Data
 * For the `Given Issue`, use the `jira_search` tool to fetch its `Type` using the JQL statement below. You will need this info to fetch data about its descendants.
@@ -38,12 +38,16 @@ For each analysis you need to:
     * Perform Prescribed Computations
 
 
-#### Computations
+#### Prescribed Computations
+
 1.  **`Computed Status Summary`**:
-      * The `Computed Status Summary` is derived by summarizing the issue's `Summary`, `Description`, and a rollup of its most recent `Comment(s)` text.
-      * Only compute status summaries for issues with a `Status Contribution` greater than 1.0.
-      * If an issue already has a `Status Summary` (customfield\_12320841), use it for subsequent analysis; otherwise, use the `Computed Status Summary` instead.
       * The selected field is referred to as the `Selected Status Summary`.
+      <!-- I don't understand which "selected field" we are referring to here, but I thought this instruction  -->
+      * The `Computed Status Summary` is derived by summarizing the issue's `Summary`, `Description`, and a rollup of its most recent `Comment(s)` text.
+      <!-- I'm not seeing the summary in the JIRA ticket. Is this a custom field that I am missing? -->
+      * Only compute status summaries for issues with a `Status Contribution` greater than 1.0.
+      <!-- I'm not seeing the Status contribution either. Is that the Computed Status Summary the same thing or am I missing that field in JIRA?  -->
+      * If an issue already has a `Status Summary` (customfield\_12320841), use it for subsequent analysis; otherwise, use the `Computed Status Summary` instead.
 1.  **`Computed Delivery Date`**:
       * The `Computed Delivery Date` is computed as follows:
       $$
@@ -54,6 +58,7 @@ For each analysis you need to:
 1.  **`Computed Color Status`**: 
     * To determine the `Computed Color Status` use the following criteria:
       * **GREEN:** (Positive sentiment, and `Computed Delivery Date` is before or within 1 week of the `Target end Date`) or (`Number of Open Descendants` = 0, and `Number of Open Descendants` != 0).
+      <!-- Would saying <= one week simplfy the logic? -->
       * **YELLOW:** Neutral sentiment, or `Computed Delivery Date` is 1-3 weeks past the `Target end Date`.
       * **RED:** Negative sentiment, or `Computed Delivery Date` is more than 3 weeks past the `Target end Date`.
       * **Fallback for Missing Date:** If the `Target end Date` is missing, the color status is solely determined by **Sentiment** unless the calculated delivery date is excessively long (e.g., 6+ months), in which case it is **YELLOW**.
